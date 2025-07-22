@@ -9,6 +9,7 @@ const navItems = [
   { label: 'About', href: '/about' },
   { label: 'Posts', href: '/posts' },
   { label: 'Users', href: '/users' },
+  { label: 'Board', href: '/board' },
 ];
 
 export default function Navbar() {

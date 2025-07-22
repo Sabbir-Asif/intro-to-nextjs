@@ -7,13 +7,13 @@ import PostSkeleton from '@/components/PostSkeleton';
 const PostsPage = () => {
 
     const {
-        data: posts,
+        data: tasks,
         isError,
         isLoading,
         error
     } = useQuery({
-        queryKey: ['posts'],
-        queryFn: () => getData('/posts')
+        queryKey: ['tasks'],
+        queryFn: () => getData('/tasks')
     });
     if (isLoading) return <PostSkeleton count={3} />;
     if (isError) return <p>Error: {(error as Error).message}</p>;
@@ -22,10 +22,10 @@ const PostsPage = () => {
         <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Posts</h2>
             <ul className="space-y-2">
-                {posts?.map((post: Post) => (
+                {tasks.data?.map((post: Post) => (
                     <li key={post.id} className="border p-4 rounded shadow">
-                        <h3 className="font-bold">{post.title}</h3>
-                        <p>{post.body}</p>
+                        <h3 className="font-bold">{post.name}</h3>
+                        <p>{post.description}</p>
                     </li>
                 ))}
             </ul>

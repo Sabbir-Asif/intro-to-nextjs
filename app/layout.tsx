@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased p-6`}
+        className={`antialiased p-6 max-w-8xl mx-auto`}
       >
         <Navbar />
         <ReactQueryWrapper>{children}</ReactQueryWrapper>
